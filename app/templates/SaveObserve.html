@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<form action="" method="post">
+    <ul class="list-group">
+
+        {{ form.csrf_token() }}
+        {% for field in form if field.name != 'csrf_token' %}
+        <li class="list-group-item list-group-item-primary">
+            <div>
+                <ul class="d-flex flex-wrap">
+                    <li class="list-group-item">
+                        {{ field() }}
+                    </li>
+
+                    <li class="list-group-item">
+                        {{ field.label() }}
+                    </li>
+                </ul>
+                {% for error in field.errors %}
+                <div class="error">{{ error }}</div>
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </li>
+    </ul>
+</form>
+
+{% endblock %}
+
+=

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+
+<table>
+    {% for i in range(1,len+1,2) %}
+    <tr><td><img src="{{url_for('static',filename='distplot-'~i~'.jpg')}}"></td>
+        <td><img src="{{url_for('static',filename='distplot-'~(i+1)~'.jpg')}}"></td></tr>
+    {% endfor %}
+</table>
+
+
+{% for i in normality%}
+    <br/>
+    {% for j in i%}
+        <br/> {{ j }}
+    {% endfor %}
+{% endfor %}
+    <br/>
+{% for i in homoscedasticity%}
+    <br/> {{ i }}
+{% endfor %}
+    <br/>
+{% for i in auto_correlation%}
+    <br/> {{ i }}
+{% endfor %}
+    <br/>
+{% for i in multicollinearities%}
+    <br/> {{ i }}
+{% endfor %}
+    <br/>
+    {% for i in anova_test%}
+        <br/> {{ i }}
+    {% endfor %}
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+{% endblock %}

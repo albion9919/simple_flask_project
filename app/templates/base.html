@@ -1,0 +1,75 @@
+<html>
+<head>
+    {% if title %}
+    <title>{{title}}</title>
+    {% else %}
+    <title>microblog</title>
+    {% endif %}
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+    <style>
+        .nav_my_item
+        {
+            width: 150px;
+        }
+        .analysis
+        {
+            width: 300px;
+        }
+        .analysis_list
+        {
+            padding-left: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<ul class="d-flex flex-wrap">
+    <li class="list-group-item nav_my_item">
+        <a href="/index.html">Home</a>
+    </li>
+    <li class="list-group-item nav_my_item">
+        <a href="/AddObserve.html">AddObserve</a>
+    </li>
+    <li class="list-group-item nav_my_item">
+        <a href="/ShowObserves.html">ShowObserves</a>
+    </li>
+    <li class="list-group-item nav_my_item">
+        <a href="/SaveObserve.html">SaveObserve</a>
+    </li>
+</ul>
+
+
+<ul class="d-flex flex-wrap">
+    <li class="list-group-item">
+        <div>Analysis:</div>
+    </li>
+</ul>
+
+
+<ul class="list-group analysis_list">
+    <li class="list-group-item analysis">
+        <a href="/Analysis.html">One way ANOVA (Income ~ School Degree)</a>
+    </li>
+    <li class="list-group-item analysis">
+        <a href="/GenderMaritalAnalysis.html">Two ways ANOVA (Income ~ Gender and Marital Status)</a>
+    </li>
+    <li class="list-group-item analysis">
+        <a href="/GenderJobAnalysis.html">Two ways ANOVA (Income ~ Gender and Job pref)</a>
+    </li>
+</ul>
+
+
+
+<hr>
+{% block content %}
+{% endblock %}
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>
